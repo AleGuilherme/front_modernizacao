@@ -16,4 +16,18 @@ function carregaInfo(){
     document.getElementById("fotoUser").innerHTML = strFoto;
     document.getElementById("bioUser").innerHTML = strBio;
 
+    // aqui começo a preencher a lista de comunidades
+    var strLista = "";
+    for (i=0; i<user.comunidades.length; i++){
+        var comunidade = user.comunidades[i];
+
+
+        strLista = strLista + `<div class="row">
+                                  <div class="col-8">${comunidade.nome}</div>
+                                  <div class="col-2"><a href="novaocorrencia.html" class="btn btn-success">Novo</a></div>
+                                  <div class="col-2"><a href="extrato.html" class="btn btn-warning">Extrato</a></div>
+                               </div>`;
+    }
+    document.getElementById("listaComunidades").innerHTML = strLista;
+
 }
