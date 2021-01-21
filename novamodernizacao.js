@@ -30,3 +30,37 @@ function carregaInfo(){
     */
 
 }
+
+function cadastrar(){
+    var txtData        = document.getElementById("txtData").value;
+    var txtDescricao   = document.getElementById("txtDescricao").value;
+    var txtPercentual  = document.getElementById("txtPercentual").value;
+
+    var msgBody = {
+        data : txtData,
+        descricao : txtDescricao,
+        percentual : parseFloat(txtPercentual),
+        comunidade : {
+            id : IDCom
+        }
+    }
+
+    var cabecalho = {
+        method: "POST",
+        body  : JSON.stringify(msgBody),
+        headers : {
+            "content-type":"application/json"
+        }
+    }
+
+    fetch("http://localhost:8088/modernizacao/nova", cabecalho)
+       .then(res => {
+           if (res.status == 201){
+               alert("Item de modernizacao cadastrado com sucesso!");
+           }
+           else{
+               alert("Erro ao gravar item de modernizacao");
+           }
+       });
+
+}
