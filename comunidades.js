@@ -24,8 +24,8 @@ function carregaInfo(){
 
         strLista = strLista + `<div class="row">
                                   <div class="col-8">${comunidade.nome}</div>
-                                  <div class="col-2"><a href="novaocorrencia.html" class="btn btn-success">Novo</a></div>
-                                  <div class="col-2"><a href="extrato.html" class="btn btn-warning">Extrato</a></div>
+                                  <div class="col-2"><a href="novamodernizacao.html?id=${comunidade.id}" class="btn btn-success">Novo</a></div>
+                                  <div class="col-2"><a href="extrato.html?id=${comunidade.id}" class="btn btn-warning">Extrato</a></div>
                                </div>`;
     }
     document.getElementById("listaComunidades").innerHTML = strLista;

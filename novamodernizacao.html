@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script type="text/javascript" src="novamodernizacao.js"></script>
+    <title>.: Cadastro de Modernizacao :.</title>
+</head>
+
+<body onload="carregaInfo()">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text center">
+                <h3>Cadastro de nova Modernização</h3>
+            </div>
+        </div>
+
+        <!-- formulario de cadastro -->
+        <label for="formulario" class="form-label">Cadastro da Modernização</label>
+        <div id="formulario">
+            <div class="mb-3">
+                <label for="txtData" class="form-label">Data da Modernização</label>
+                <input type="date" class="form-control" id="txtData">
+                <button type="button" class="btn btn-primary">Pesquisar</button>
+            </div>
+
+            <div class="mb-3">
+                <label for="txtDescricao" class="form-label">Descrição</label>
+                <input type="text" class="form-control" id="txtDescricao">
+            </div>
+
+            <div class="mb-3">
+                <label for="txtPercentual" class="form-label">Percentual de Conclusão</label>
+                <input type="number" min="0" max="100" class="form-control" id="txtPercentual">
+            </div>
+
+            <button type="button" class="btn btn-primary">Cadastrar</button>
+
+        </div>
+        <!-- fim do formulario -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
