@@ -17,14 +17,9 @@ function carregaExtrato(){
 
 function preencheExtrato(lista){
     var total=0;
-    var nomeComunidade;
-    var nomeTeamLeader;
-
     var extratoSTR="";
-
     for (i=0; i<lista.length; i++){
         var mod = lista[i];
-
         extratoSTR = extratoSTR + `<div class="row">
                                     <div class="col-2"> ${mod.data} </div>
                                     <div class="col-9"> ${mod.descricao} </div>
@@ -37,12 +32,8 @@ function preencheExtrato(lista){
     if (lista.length > 0){
         document.getElementById("comunidade").innerHTML = `<h3>${lista[0].comunidade.nome}
                                                           (${lista[0].comunidade.teamLeader.nome})</h3>`
-        
-
     }
     else{
         document.getElementById("comunidade").innerHTML = "Comunidade sem ações";
     }
-
-
 }
