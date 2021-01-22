@@ -12,6 +12,7 @@ function carregaInfo(){
     var strBio  = `<h4>${user.nome}</h4>
                    <p><strong>RACF:</strong> ${user.racf}</p>
                    <p><strong>EMAIL:</strong> ${user.email}</p>
+                   <button type="button" class="btn btn-primary" onclick="logout()">Logout</button>
                   `
     document.getElementById("fotoUser").innerHTML = strFoto;
     document.getElementById("bioUser").innerHTML = strBio;
@@ -30,4 +31,9 @@ function carregaInfo(){
     }
     document.getElementById("listaComunidades").innerHTML = strLista;
 
+}
+
+function logout(){
+    localStorage.removeItem("userMod");
+    window.location = "index.html";
 }
