@@ -31,7 +31,12 @@
             <div class="mb-3">
                 <label for="txtData" class="form-label">Data da Modernização</label>
                 <input type="date" class="form-control" id="txtData">
-                <button type="button" class="btn btn-primary">Pesquisar</button>
+                <button type="button" class="btn btn-primary" onclick="pesquisar()">Pesquisar</button>
+            </div>
+            <div class="row">
+                <div class="col-12" id="restricoes">
+                    *****
+                </div>
             </div>
 
             <div class="mb-3">
@@ -42,6 +47,12 @@
             <div class="mb-3">
                 <label for="txtPercentual" class="form-label">Percentual de Conclusão</label>
                 <input type="number" min="0" max="100" class="form-control" id="txtPercentual">
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <p id="msgStatus" style="color:red;">...</p>
+                </div>
             </div>
 
             <button type="button" class="btn btn-primary" onclick="cadastrar()">Cadastrar</button>

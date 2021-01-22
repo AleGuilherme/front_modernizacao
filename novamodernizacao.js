@@ -1,5 +1,8 @@
 // preciso do ID da comunidade global para várias funções
 var IDCom;
+// preciso tb do percentual de conclusão e tb do número de ocorrências
+var pConclusao;
+var numOcorrencias;
 
 
 function carregaInfo(){
@@ -36,6 +39,12 @@ function cadastrar(){
     var txtDescricao   = document.getElementById("txtDescricao").value;
     var txtPercentual  = document.getElementById("txtPercentual").value;
 
+
+    if (numOcorrencias > 0 || parseFloat(txtPercentual) + parseFloat(pConclusao) > 100){
+        document.getElementById("msgStatus").innerHTML = "Já existem ocorrências para o mês ou o percentual total excede 100%";
+        return;
+    }
+
     var msgBody = {
         data : txtData,
         descricao : txtDescricao,
@@ -63,4 +72,20 @@ function cadastrar(){
            }
        });
 
+}
+
+function pesquisar(){
+    // idéia: buscar o id da comunidade + a data de cadastro e ir até o backend e buscar
+    // as restricoes
+
+    var txtData = document.getElementById("txtData").value;
+
+    fetch("http://localhost:8088/modernizacao/"+IDCom+"/"+txtData)
+        .then(res=> res.json())
+        .then(objeto => {
+            var txtRestricao = `${objeto.percentual}% concluido e ${objeto.quantidade} ocorrencias neste mes/ano`;
+            document.getElementById("restricoes").innerHTML = txtRestricao;
+            pConclusao = objeto.percentual;
+            numOcorrencias = objeto.quantidade;
+        });
 }
